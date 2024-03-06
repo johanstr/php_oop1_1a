@@ -12,7 +12,7 @@ class Table
       }
    }
 
-   public function draw()
+   public function draw(): void
    {
       echo '<table border="1">';
       // De draw method aanroepen van alle children in content
