@@ -1,8 +1,15 @@
 <?php
 @include_once('src/Table.php');
-@include_once('src/Trow.php');
-@include_once('src/Tcell.php');
 
+$users = [
+   [ 'id' => 1, 'naam' => 'Joop Kopstoot', 'email' => 'joop@kopstoot.com' ],
+   [ 'id' => 2, 'naam' => 'Johny Kebab', 'email' => 'johny@kebab.com' ],
+   [ 'id' => 3, 'naam' => 'Wilhelm van Hot naar Her', 'email' => 'hot@her.com' ],
+   [ 'id' => 4, 'naam' => 'Truus von Miepenstein', 'email' => 'truus@miepenstein.com' ],
+   [ 'id' => 5, 'naam' => 'Miepie Kip', 'email' => 'miepie@kip.com' ],
+];
+
+$user_table = new Table($users);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -16,21 +23,6 @@
    </head>
 
    <body>
-      <table border="1">
-         <tr>
-            <td>1</td>
-            <td>Product 1</td>
-            <td>2</td>
-            <td>&euro; 1,00</td>
-            <td>&euro; 2,00</td>
-         </tr>
-         <tr>
-            <td>1</td>
-            <td>Product 2</td>
-            <td>3</td>
-            <td>&euro; 2,00</td>
-            <td>&euro; 6,00</td>
-         </tr>
-      </table>
+      <?php $user_table->draw(); ?>
    </body>
 </html>
